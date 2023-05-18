@@ -32,16 +32,17 @@ body {
   background: #0b162c;
   border-radius: 40px;
   border: rgb(172, 163, 163) solid 0.1px;
-  box-shadow: rgba(255, 255, 255, 0.25) 0px 0.0625em 0.0625em, rgba(255, 255, 255, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 1px 1px 1px 1px inset, white inset 0 0 10px;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 0.0625em 0.0625em, rgba(255, 255, 255, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 1px 1px 1px 1px inset, white inset 0 0 5px;
   padding: 40px 30px;
   margin-left: 20vw;
 }
 
 button {
+  cursor: pointer;
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  background: #0b162c;
+  background: #131e32;
   border: none;
   color: white;
   box-shadow: rgb(255, 255, 255) -0.8px -0.8px, rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -58,7 +59,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 300px;
+  width: 270px;
   height: 50px;
 }
 
@@ -73,6 +74,10 @@ button:hover {
   height: 200px;
   width: auto;
 }
+#music-image:hover {
+  transition: transform 5s ease-in-out;
+  transform: rotate(360deg);
+}
 
 #time-bar {
   width: 300px;
@@ -81,7 +86,7 @@ button:hover {
 }
 
 .bottom-row {
-  width: 300px;
+  width: 240px;
   display: flex;
   align-items: center;
   justify-content: space-around;
