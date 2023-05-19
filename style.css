@@ -93,7 +93,7 @@ button:hover {
   flex-direction: row;
   justify-content: space-between;
   width: 260px;
-  height: 0.5rem;
+  font-size: 0.8rem;
   color: white;
 }
 
@@ -115,4 +115,8 @@ button:hover {
 #play-button {
   width: 60px;
   height: 60px;
+}
+
+.fa-pause {
+  transform: scale(1.4);
 }/*# sourceMappingURL=style.css.map */
