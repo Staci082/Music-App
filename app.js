@@ -82,18 +82,18 @@ class Spotify {
     }
 
 // PREVIOUS SONG BUTTON
-    previousSong() {
-      console.log("previous")
-      this.addSongInfo()
-
-      let SizeOfSongs = this.songs.length-1
-
-      if(SizeOfSongs === this.currentSong){
-          this.currentSong =0;
-      }else{
-          this.currentSong--
-      }
-    }
+//     previousSong() {
+//       console.log("previous")
+//       this.addSongInfo()
+// 
+//       let SizeOfSongs = this.songs.length-1
+// 
+//       if(SizeOfSongs === this.currentSong){
+//           this.currentSong =0;
+//       }else{
+//           this.currentSong--
+//       }
+//     }
 
 // NEXT SONG BUTTON
     nextSong() {
@@ -103,7 +103,7 @@ class Spotify {
       let SizeOfSongs = this.songs.length-1
 
       if(SizeOfSongs === this.currentSong){
-          this.currentSong =0;
+          this.currentSong = 0;
       }else{
           this.currentSong++
       }
@@ -142,9 +142,9 @@ nextButton.addEventListener('click', () => {
 app.addSong('Toxicity','SOAD','Rock', '3.57','./images/music swirl-blue.png');
 app.addSong('Byob','SOAD','Rock','4.29','./images/music swirl-orange.png');
 app.addSong('My name is','Eminem','Rap','3.46','./images/music swirl-purple.png');
+app.addSong('Upper Cuts','Terror Reid','Rap','4.27','./images/music swirl-blue.png');
 app.addSong('Before I die','2pac','Rap','4.51','./images/music swirl-orange.png');
 app.addSong('Welcome to the Internet','Bo Burnham','Rap','5.24','./images/music swirl-purple.png');
-app.addSong('Upper Cuts','Terror Reid','Rap','4.27','./images/music swirl-blue.png');
 
 
 /* WORKING FUNCTIONS */
@@ -154,7 +154,6 @@ app.addSong('Upper Cuts','Terror Reid','Rap','4.27','./images/music swirl-blue.p
 // console.log(app.playAny())
 // console.log(app.play())
 // console.log(app.pause())
-// console.log(app.previousSong())
 // console.log(app.nextSong())
 // console.log(app.addSongToPlaylist("Upper Cuts"))
 // console.log(app.displayPlaylist())
@@ -162,3 +161,5 @@ app.addSong('Upper Cuts','Terror Reid','Rap','4.27','./images/music swirl-blue.p
 
 
 /* STILL TESTING FUNCTIONS*/ 
+
+// console.log(app.prevousSong())
