@@ -1,10 +1,5 @@
 
 
-// BUTTON VARIABLES
-const playlistButton = document.getElementById('playlist-button');
-const searchButton = document.getElementById('search-button');
-const searchBar = document.getElementById('search');
-
 
 class Spotify {
     constructor() {
@@ -42,6 +37,7 @@ class Spotify {
 
 // ADD SONG TO PLAYLIST
     addSongToPlaylist(songTitle) {
+      
       let song = this.songs.find(song=>song.title === songTitle)
       this.playlist.push(song)
     }
@@ -50,7 +46,7 @@ class Spotify {
     openSearchBar() {
       // using a parameter here to connect the variable "searchBar" to the eventListener
       const closeSearchIcon = `<i class="fa-solid fa-xmark fa-lg"></i>`;
-      console.log("search")
+      console.log("open search")
       
       searchButton.innerHTML = closeSearchIcon;    
       this.searchToggle = true;
@@ -133,23 +129,33 @@ let app = new Spotify();
 
 // ADD FUNCTIONS TO BUTTONS ON CLICKITY CLACK
 
+
+// PLAY & PAUSE BUTTON EVENTLISTENER
 playPauseButton.addEventListener('click', () => {
   app.isPlaying ? app.pause() : app.play();
 });
 
+// PLAYLIST BUTTON EVENTLISTENER
+const playlistButton = document.getElementById('playlist-button');
 playlistButton.addEventListener('click', () => {
   app.displayPlaylist()
 });
+
+// SEARCH BAR & BUTTON EVENTLISTENER
+const searchButton = document.getElementById('search-button');
+const searchBar = document.getElementById('search');
 
 searchButton.addEventListener('click', () => {
   app.searchToggle ? app.closeSearchBar() : app.openSearchBar();
 });
 
+// PREVIOUS SONG BUTTON EVENTLISTENER
 const previousButton = document.getElementById('previous-button');
 previousButton.addEventListener('click', () => {
     app.previousSong()
 });
 
+// NEXT SONG BUTTON EVENTLISTENER
 const nextButton = document.getElementById('next-button');
 nextButton.addEventListener('click', () => {
     app.nextSong()
