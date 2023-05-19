@@ -36,11 +36,11 @@ body {
         rgba(255, 255, 255, 0.25) 0px 0.125em 0.5em,
         rgba(255, 255, 255, 0.1) 1px 1px 1px 1px inset, white inset 0 0 5px;
     padding: 40px 30px;
-    margin-left: 20vw;
+    margin-left: 30vw;
 }
 
 button {
-  cursor: pointer;
+    cursor: pointer;
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -75,14 +75,21 @@ button {
         width: auto;
     }
     &:hover {
-      transition: transform 5s ease-in-out;
-      transform: rotate(360deg);
+        transition: transform 5s ease-in-out;
+        transform: rotate(360deg);
     }
 }
-#time-bar {
-    width: 300px;
+#progress-container {
+    display: flex;
+    align-items: center;
+    width: 270px;
     height: 50px;
-    border: yellow solid 2px;
+}
+#progress {
+    width: 270px;
+    height: 10px;
+    border-radius: 5px;
+    background: white;
 }
 .bottom-row {
     width: 240px;
