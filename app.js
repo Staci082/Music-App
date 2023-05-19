@@ -11,7 +11,7 @@ class Spotify {
       this.currentSong = 0;
     }
   
-// ADD SONG
+// ADD SONG FUNCTION
   addSong(title, artist, genre, duration, image) {
     let obj = {
       title,
@@ -29,39 +29,41 @@ class Spotify {
  //    );
  //  }
 
-// DISPLAY PLAYLIST BUTTON
+// DISPLAY PLAYLIST BUTTON FUNCTION
     displayPlaylist() {
       console.log(this.playlist)
       console.log("playlist here")
     }
 
-// ADD SONG TO PLAYLIST
+// ADD SONG TO PLAYLIST FUNCTION
     addSongToPlaylist(songTitle) {
       
       let song = this.songs.find(song=>song.title === songTitle)
       this.playlist.push(song)
     }
 
-// OPEN SEARCH BAR
+// OPEN SEARCH BAR FUNCTION
     openSearchBar() {
       // using a parameter here to connect the variable "searchBar" to the eventListener
       const closeSearchIcon = `<i class="fa-solid fa-xmark fa-lg"></i>`;
+       //   const searchBar = document.querySelector("#search-bar");
       console.log("open search")
       
       searchButton.innerHTML = closeSearchIcon;    
       this.searchToggle = true;
     }
 
-// CLOSE SEARCH BAR
+// CLOSE SEARCH BAR FUNCTION
     closeSearchBar() { 
       const openSearchIcon = `<i class="fa-solid fa-magnifying-glass fa-lg"></i>`;
+   //   const searchBar = document.querySelector("#search-bar");
       console.log("close search")
 
       searchButton.innerHTML = openSearchIcon;  
       this.searchToggle = false;
     }
 
-// PAUSE BUTTON
+// PAUSE BUTTON FUNCTION
     pause() {
       const playIcon = '<i class="fas fa-play fa-2xl"></i>';
       playPauseButton.innerHTML = playIcon;
@@ -69,7 +71,7 @@ class Spotify {
       this.isPlaying = false;
     }
   
-// PLAY BUTTON
+// PLAY BUTTON FUNCTION
     play() {
       const pauseIcon = '<i class="fas fa-pause fa-2xl"></i>';
       playPauseButton.innerHTML = pauseIcon;
@@ -77,7 +79,7 @@ class Spotify {
       this.isPlaying = true;
     }
 
-// ADD SONG INFO TO HTML
+// ADD SONG INFO TO HTML FUNCTION
     addSongInfo() {
       
       // OBJECT PROPERTY VARIABLES
@@ -93,7 +95,7 @@ class Spotify {
       songDuration.innerHTML = `${this.songs[this.currentSong].duration}`
     }
 
-// PREVIOUS SONG BUTTON
+// PREVIOUS SONG BUTTON FUNCTION
     previousSong() {
       console.log("previous")
       this.addSongInfo()
@@ -107,7 +109,7 @@ class Spotify {
       }
 }
 
-// NEXT SONG BUTTON
+// NEXT SONG BUTTON FUNCTION
     nextSong() {
       console.log("next")
       this.addSongInfo()
@@ -123,12 +125,11 @@ class Spotify {
 }
 
 
-// DONT FORGET THIS 
+// DONT FORGET THIS !!
 let app = new Spotify();
 
 
 // ADD FUNCTIONS TO BUTTONS ON CLICKITY CLACK
-
 
 // PLAY & PAUSE BUTTON EVENTLISTENER
 playPauseButton.addEventListener('click', () => {
@@ -143,7 +144,6 @@ playlistButton.addEventListener('click', () => {
 
 // SEARCH BAR & BUTTON EVENTLISTENER
 const searchButton = document.getElementById('search-button');
-const searchBar = document.getElementById('search');
 
 searchButton.addEventListener('click', () => {
   app.searchToggle ? app.closeSearchBar() : app.openSearchBar();
