@@ -23,6 +23,10 @@ body {
     background-image: url("../images/paint.jpg");
     background-size: cover;
 }
+.text {
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
 
 .phone-container {
     @include flex;
@@ -54,10 +58,6 @@ button {
         transform: scale(1.2);
     }
 }
-
-.text {
-    color: rgb(255, 255, 255);
-}
 .top-row {
     @include flex;
     justify-content: space-between;
@@ -67,7 +67,7 @@ button {
 
 
 
-#music-image {
+#song-image-container {
     display: flex;
     justify-content: center;
     width: 250px;

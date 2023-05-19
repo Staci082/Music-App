@@ -17,6 +17,11 @@ body {
   background-size: cover;
 }
 
+.text {
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
 .phone-container {
   display: flex;
   align-items: center;
@@ -46,10 +51,6 @@ button:hover {
   transform: scale(1.2);
 }
 
-.text {
-  color: rgb(255, 255, 255);
-}
-
 .top-row {
   display: flex;
   align-items: center;
@@ -58,18 +59,18 @@ button:hover {
   height: 50px;
 }
 
-#music-image {
+#song-image-container {
   display: flex;
   justify-content: center;
   width: 250px;
   height: 200px;
   overflow: hidden;
 }
-#music-image img {
+#song-image-container img {
   height: 200px;
   width: auto;
 }
-#music-image:hover {
+#song-image-container:hover {
   transition: transform 5s ease-in-out;
   transform: rotate(360deg);
 }
