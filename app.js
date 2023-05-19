@@ -11,12 +11,13 @@ const searchButton = document.getElementById('search-button');
 const playPauseButton = document.getElementById('playPauseButton');
 const previousButton = document.getElementById('previous-button');
 const nextButton = document.getElementById('next-button');
-
+const searchBar = document.getElementById('search');
 
 class Spotify {
     constructor() {
       this.songs = [];
       this.playlist = [];
+      this.searchToggle = false;
       this.isPlaying = false;
       this.isPaused = false;
       this.currentSong = 0;
@@ -52,9 +53,27 @@ class Spotify {
       this.playlist.push(song)
     }
 
-// SEARCH BUTTON
-    search() {
+// OPEN SEARCH BAR
+    openSearchBar() {
+      // using a parameter here to connect the variable "searchBar" to the eventListener
+
+      const closeSearchIcon = `<i class="fa-solid fa-xmark fa-lg"></i>`;
       console.log("search")
+      
+      searchButton.innerHTML = closeSearchIcon;
+      
+      this.searchToggle = true;
+    }
+
+// CLOSE SEARCH BAR
+    closeSearchBar() { 
+      const openSearchIcon = `<i class="fa-solid fa-magnifying-glass fa-lg"></i>`;
+
+      console.log("close search")
+
+      searchButton.innerHTML = openSearchIcon;
+      
+      this.searchToggle = false;
     }
 
 // PAUSE BUTTON
@@ -76,24 +95,24 @@ class Spotify {
 // ADD SONG INFO TO HTML
     addSongInfo() {
       songTitle.innerHTML = `${this.songs[this.currentSong].title.toUpperCase()}`
-      songArtist.innerHTML = `${this.songs[this.currentSong].artist.toUpperCase()}`
+      songArtist.innerHTML = `${this.songs[this.currentSong].artist}`
       songImage.src = `${this.songs[this.currentSong].image}`
       songDuration.innerHTML = `${this.songs[this.currentSong].duration}`
     }
 
 // PREVIOUS SONG BUTTON
-//     previousSong() {
-//       console.log("previous")
-//       this.addSongInfo()
-// 
-//       let SizeOfSongs = this.songs.length-1
-// 
-//       if(SizeOfSongs === this.currentSong){
-//           this.currentSong =0;
-//       }else{
-//           this.currentSong--
-//       }
-//     }
+    previousSong() {
+      console.log("previous")
+      this.addSongInfo()
+
+      let SizeOfSongs = this.songs.length-1
+
+      if(SizeOfSongs === this.currentSong){
+          this.currentSong =0;
+      }else{
+          this.currentSong--
+      }
+}
 
 // NEXT SONG BUTTON
     nextSong() {
@@ -126,7 +145,7 @@ playlistButton.addEventListener('click', () => {
 });
 
 searchButton.addEventListener('click', () => {
-  app.search()
+  app.searchToggle ? app.closeSearchBar() : app.openSearchBar();
 });
 
 previousButton.addEventListener('click', () => {
@@ -136,6 +155,7 @@ previousButton.addEventListener('click', () => {
 nextButton.addEventListener('click', () => {
     app.nextSong()
 });
+
 
 
 // ADDING THE SONGS
@@ -163,3 +183,5 @@ app.addSong('Welcome to the Internet','Bo Burnham','Rap','5:24','./images/music 
 /* STILL TESTING FUNCTIONS*/ 
 
 // console.log(app.prevousSong())
+// console.log(app.openSearchBar())
+// console.log(app.closeSearchBar())
