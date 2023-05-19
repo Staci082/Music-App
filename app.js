@@ -4,13 +4,13 @@
 class Spotify {
     constructor() {
       this.songs = [];
-      this.users = [];
+      this.playlist = [];
       this.isPlaying = false;
       this.isPaused = false;
       this.currentSong = 0;
     }
   
-  // Add a Song
+// ADD SONG
   addSong(name, artist, genre, album, lang, duration, year) {
     let obj = {
       name,
@@ -23,43 +23,82 @@ class Spotify {
     };
    return this.songs.push(obj)
   }
+
+ //  findSongByAnything(property, userInput) {
+ //    return this.songs.filter((song) =>
+ //      String(song[property]).toLowerCase().includes(userInput.toLowerCase())
+ //    );
+ //  }
+
+// PAUSE BUTTON
+    pause() {
+      const playIcon = '<i class="fas fa-play fa-2xl"></i>';
+      playPauseButton.innerHTML = playIcon;
+      console.log("paused")
+      this.isPlaying = false;
+    }
   
-  findSongByAnything(property, userInput) {
-    return this.songs.filter((song) =>
-      String(song[property]).toLowerCase().includes(userInput.toLowerCase())
-    );
-  }
+// PLAY BUTTON
+    play() {
+      const pauseIcon = '<i class="fas fa-pause fa-2xl"></i>';
+      playPauseButton.innerHTML = pauseIcon;
+      console.log("playing")
+      this.isPlaying = true;
+    }
   
-  playAny() {
-    let random = Math.floor(Math.random() * this.songs.length);
-    this.isPlaying
-      ? console.log(
-          `${this.songs[random].name} - ${
-            this.songs[random].artist
-          } is paused...`
-        )
-      : console.log(
-          `${this.songs[random].name} - ${
-            this.songs[random].artist
-          } is playing now...` 
-        );
+//   playAny() {
+//     let random = Math.floor(Math.random() * this.songs.length);
+//     this.isPlaying
+//       ? console.log(
+//           `${this.songs[random].name} - ${
+//             this.songs[random].artist
+//           } is paused...`
+//         )
+//       : console.log(
+//           `${this.songs[random].name} - ${
+//             this.songs[random].artist
+//           } is playing now...` 
+//         );
+//   }
+
+  previousSong() {
+    console.log("previous")
   }
 
-  // Pause player
-  pause() {
-    this.isPlaying = false;
+  nextSong() {
+  console.log("next")
   }
 
-  // Play player
-  play() {
-    this.isPlaying = true;
-  }
 }
-  
+
+let app = new Spotify();
+
+
+// BUTTONS
+
+const playPauseButton = document.getElementById('playPauseButton');
+const previousButton = document.getElementById('previous-button');
+const nextButton = document.getElementById('next-button');
+
+playPauseButton.addEventListener('click', () => {
+  if (app.isPlaying) {
+    app.pause();
+  } else {
+    app.play();
+  }
+});
+
+previousButton.addEventListener('click', () => {
+    app.previousSong()
+});
+nextButton.addEventListener('click', () => {
+    app.nextSong()
+});
+
 
   
   
-  let app = new Spotify();
+
   
   app.addSong('Toxicity','SOAD','Rock','Toxicity','EN','10','2004');
   app.addSong('Byob','SOAD','Rock','Unknown','EN','7','2005');
@@ -71,6 +110,8 @@ class Spotify {
 
 // console.log(app.songs)
 // console.log(app.findSongByAnything("genre", "Genre"))
-
-console.log(app.playAny())
+// console.log(app.playAny())
+// console.log(app.play())
 // console.log(app.pause())
+// console.log(app.previousSong())
+// console.log(app.nextSong())
