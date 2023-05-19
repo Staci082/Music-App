@@ -115,7 +115,7 @@ class Spotify {
 let app = new Spotify();
 
 
-// BUTTONS
+// ADD FUNCTIONS TO BUTTONS ON CLICKITY CLACK
 
 playPauseButton.addEventListener('click', () => {
   app.isPlaying ? app.pause() : app.play();
@@ -138,13 +138,13 @@ nextButton.addEventListener('click', () => {
 });
 
 
-
-app.addSong('Toxicity','SOAD','Rock', '3.57','./images/music swirl-blue.png');
-app.addSong('Byob','SOAD','Rock','4.29','./images/music swirl-orange.png');
-app.addSong('My name is','Eminem','Rap','3.46','./images/music swirl-purple.png');
-app.addSong('Upper Cuts','Terror Reid','Rap','4.27','./images/music swirl-blue.png');
-app.addSong('Before I die','2pac','Rap','4.51','./images/music swirl-orange.png');
-app.addSong('Welcome to the Internet','Bo Burnham','Rap','5.24','./images/music swirl-purple.png');
+// ADDING THE SONGS
+app.addSong('Toxicity','SOAD','Rock', '3:57','./images/music swirl-blue.png');
+app.addSong('Byob','SOAD','Rock','4:29','./images/music swirl-orange.png');
+app.addSong('My name is','Eminem','Rap','3:46','./images/music swirl-purple.png');
+app.addSong('Upper Cuts','Terror Reid','Rap','4:27','./images/music swirl-blue.png');
+app.addSong('Before I die','2pac','Rap','4:51','./images/music swirl-orange.png');
+app.addSong('Welcome to the Internet','Bo Burnham','Rap','5:24','./images/music swirl-purple.png');
 
 
 /* WORKING FUNCTIONS */
