@@ -56,18 +56,20 @@ class Spotify {
       this.isPlaying = true;
     }
 
+// PREVIOUS SONG BUTTON
     previousSong() {
       console.log("previous")
     }
 
+// NEXT SONG BUTTON
     nextSong() {
     console.log("next")
     }
 
 
-
 }
 
+// DONT FORGET THIS 
 let app = new Spotify();
 
 
@@ -80,11 +82,7 @@ const previousButton = document.getElementById('previous-button');
 const nextButton = document.getElementById('next-button');
 
 playPauseButton.addEventListener('click', () => {
-  if (app.isPlaying) {
-    app.pause();
-  } else {
-    app.play();
-  }
+  app.isPlaying ? app.pause() : app.play();
 });
 
 playlistButton.addEventListener('click', () => {
@@ -113,6 +111,9 @@ nextButton.addEventListener('click', () => {
   app.addSong('Upper Cuts','Terror Reid','Rap','Unknown','EN','3','2005');
   app.addSong('Upper Cuts1','Terror Reid','Rap','Unknown','EN','3','2005');
 
+
+/* WORKING FUNCTIONS */
+
 // console.log(app.songs)
 // console.log(app.findSongByAnything("genre", "Genre"))
 // console.log(app.playAny())
@@ -120,3 +121,6 @@ nextButton.addEventListener('click', () => {
 // console.log(app.pause())
 // console.log(app.previousSong())
 // console.log(app.nextSong())
+
+
+/* STILL TESTING FUNCTIONS*/ 
