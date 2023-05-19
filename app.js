@@ -30,6 +30,16 @@ class Spotify {
  //    );
  //  }
 
+// OPEN PLAYLISTS BUTTON
+    openPlaylist() {
+      console.log("open playlist")
+    }
+
+// SEARCH BUTTON
+    search() {
+      console.log("search")
+    }
+
 // PAUSE BUTTON
     pause() {
       const playIcon = '<i class="fas fa-play fa-2xl"></i>';
@@ -45,29 +55,16 @@ class Spotify {
       console.log("playing")
       this.isPlaying = true;
     }
-  
-//   playAny() {
-//     let random = Math.floor(Math.random() * this.songs.length);
-//     this.isPlaying
-//       ? console.log(
-//           `${this.songs[random].name} - ${
-//             this.songs[random].artist
-//           } is paused...`
-//         )
-//       : console.log(
-//           `${this.songs[random].name} - ${
-//             this.songs[random].artist
-//           } is playing now...` 
-//         );
-//   }
 
-  previousSong() {
-    console.log("previous")
-  }
+    previousSong() {
+      console.log("previous")
+    }
 
-  nextSong() {
-  console.log("next")
-  }
+    nextSong() {
+    console.log("next")
+    }
+
+
 
 }
 
@@ -76,6 +73,8 @@ let app = new Spotify();
 
 // BUTTONS
 
+const playlistButton = document.getElementById('playlist-button');
+const searchButton = document.getElementById('search-button');
 const playPauseButton = document.getElementById('playPauseButton');
 const previousButton = document.getElementById('previous-button');
 const nextButton = document.getElementById('next-button');
@@ -88,6 +87,12 @@ playPauseButton.addEventListener('click', () => {
   }
 });
 
+playlistButton.addEventListener('click', () => {
+  app.openPlaylist()
+});
+searchButton.addEventListener('click', () => {
+  app.search()
+});
 previousButton.addEventListener('click', () => {
     app.previousSong()
 });
