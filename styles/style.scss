@@ -49,10 +49,11 @@ button {
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    background: #131e32;
+    -webkit-mask-box-image:url("../images/circle60pxglow.png");
+    background: linear-gradient(to bottom right, #283753 0%,  #131e32 55%, rgb(255,255,255,0.5) 100%);
     border: none;
     color: white;
-    box-shadow: rgba(255, 255, 255) -0.8px -0.8px,
+    box-shadow:
         rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     &:hover {
         transform: scale(1.2);
