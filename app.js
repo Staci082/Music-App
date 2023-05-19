@@ -1,17 +1,10 @@
 
-// OBJECT PROPERTY VARIABLES
-const songTitle = document.getElementById("song-title")
-const songArtist = document.getElementById("song-artist")
-const songImage = document.getElementById("song-image")
-const songDuration = document.getElementById("time-total")
 
 // BUTTON VARIABLES
 const playlistButton = document.getElementById('playlist-button');
 const searchButton = document.getElementById('search-button');
-const playPauseButton = document.getElementById('playPauseButton');
-const previousButton = document.getElementById('previous-button');
-const nextButton = document.getElementById('next-button');
 const searchBar = document.getElementById('search');
+
 
 class Spotify {
     constructor() {
@@ -56,23 +49,19 @@ class Spotify {
 // OPEN SEARCH BAR
     openSearchBar() {
       // using a parameter here to connect the variable "searchBar" to the eventListener
-
       const closeSearchIcon = `<i class="fa-solid fa-xmark fa-lg"></i>`;
       console.log("search")
       
-      searchButton.innerHTML = closeSearchIcon;
-      
+      searchButton.innerHTML = closeSearchIcon;    
       this.searchToggle = true;
     }
 
 // CLOSE SEARCH BAR
     closeSearchBar() { 
       const openSearchIcon = `<i class="fa-solid fa-magnifying-glass fa-lg"></i>`;
-
       console.log("close search")
 
-      searchButton.innerHTML = openSearchIcon;
-      
+      searchButton.innerHTML = openSearchIcon;  
       this.searchToggle = false;
     }
 
@@ -94,6 +83,14 @@ class Spotify {
 
 // ADD SONG INFO TO HTML
     addSongInfo() {
+      
+      // OBJECT PROPERTY VARIABLES
+      const songTitle = document.getElementById("song-title")
+      const songArtist = document.getElementById("song-artist")
+      const songImage = document.getElementById("song-image")
+      const songDuration = document.getElementById("time-total")
+
+      // ADDING INFO INTO HTML CONTENT
       songTitle.innerHTML = `${this.songs[this.currentSong].title.toUpperCase()}`
       songArtist.innerHTML = `${this.songs[this.currentSong].artist}`
       songImage.src = `${this.songs[this.currentSong].image}`
@@ -148,10 +145,12 @@ searchButton.addEventListener('click', () => {
   app.searchToggle ? app.closeSearchBar() : app.openSearchBar();
 });
 
+const previousButton = document.getElementById('previous-button');
 previousButton.addEventListener('click', () => {
     app.previousSong()
 });
 
+const nextButton = document.getElementById('next-button');
 nextButton.addEventListener('click', () => {
     app.nextSong()
 });
@@ -177,11 +176,10 @@ app.addSong('Welcome to the Internet','Bo Burnham','Rap','5:24','./images/music 
 // console.log(app.nextSong())
 // console.log(app.addSongToPlaylist("Upper Cuts"))
 // console.log(app.displayPlaylist())
-
+// console.log(app.openSearchBar())
+// console.log(app.closeSearchBar())
 
 
 /* STILL TESTING FUNCTIONS*/ 
 
 // console.log(app.prevousSong())
-// console.log(app.openSearchBar())
-// console.log(app.closeSearchBar())
