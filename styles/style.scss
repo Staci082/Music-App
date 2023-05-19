@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@100&display=swap");
+
+$phoneColor: #0b162c;
+$innerWidth: 270px;
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    @include flex;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Prompt";
+    background-image: url("../images/paint.jpg");
+    background-size: cover;
+}
+
+.phone-container {
+    @include flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 270px;
+    height: 70vh;
+    background: $phoneColor;
+    border-radius: 40px;
+    border: rgb(172, 163, 163) solid 0.1px;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 0.0625em 0.0625em,
+        rgba(255, 255, 255, 0.25) 0px 0.125em 0.5em,
+        rgba(255, 255, 255, 0.1) 1px 1px 1px 1px inset, white inset 0 0 5px;
+    padding: 40px 30px;
+    margin-left: 30vw;
+}
+
+button {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: #131e32;
+    border: none;
+    color: white;
+    box-shadow: rgba(255, 255, 255) -0.8px -0.8px,
+        rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.text {
+    color: rgb(255, 255, 255);
+}
+.top-row {
+    @include flex;
+    justify-content: space-between;
+    width: $innerWidth;
+    height: 50px;
+}
+
+#music-image {
+    display: flex;
+    justify-content: center;
+    width: 250px;
+    height: 200px;
+    overflow: hidden;
+    & img {
+        height: 200px;
+        width: auto;
+    }
+    &:hover {
+        transition: transform 5s ease-in-out;
+        transform: rotate(360deg);
+    }
+}
+#progress-container {
+    @include flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: $innerWidth;
+    height: 50px;
+}
+.time-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 260px;
+    font-size: 0.8rem;
+    color: white;
+}
+#progress {
+    width: $innerWidth;
+    height: 10px;
+    border-radius: 5px;
+    background: white;
+}
+.bottom-row {
+    @include flex;
+    width: 240px;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+#play-button {
+    width: 60px;
+    height: 60px;
+}
+
+.fa-pause {
+    transform: scale(1.4);
+}
