@@ -11,9 +11,9 @@ class Spotify {
     }
   
 // ADD SONG
-  addSong(name, artist, genre, album, lang, duration, year) {
+  addSong(title, artist, genre, album, lang, duration, year) {
     let obj = {
-      name,
+      title,
       artist,
       genre,
       album,
@@ -30,10 +30,18 @@ class Spotify {
  //    );
  //  }
 
-// OPEN PLAYLISTS BUTTON
-    openPlaylist() {
-      console.log("open playlist")
+// DISPLAY PLAYLIST BUTTON
+    displayPlaylist() {
+      console.log(this.playlist)
+      console.log("playlist here")
     }
+
+// ADD SONG TO PLAYLIST
+    addSongToPlaylist(songTitle) {
+      let song = this.songs.find(song=>song.title === songTitle)
+      this.playlist.push(song)
+    }
+
 
 // SEARCH BUTTON
     search() {
@@ -63,7 +71,7 @@ class Spotify {
 
 // NEXT SONG BUTTON
     nextSong() {
-    console.log("next")
+      console.log("next")
     }
 
 
@@ -86,7 +94,7 @@ playPauseButton.addEventListener('click', () => {
 });
 
 playlistButton.addEventListener('click', () => {
-  app.openPlaylist()
+  app.displayPlaylist()
 });
 searchButton.addEventListener('click', () => {
   app.search()
@@ -121,6 +129,9 @@ nextButton.addEventListener('click', () => {
 // console.log(app.pause())
 // console.log(app.previousSong())
 // console.log(app.nextSong())
+// console.log(app.addSongToPlaylist("Upper Cuts"))
+// console.log(app.displayPlaylist())
+
 
 
 /* STILL TESTING FUNCTIONS*/ 

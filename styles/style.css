@@ -58,10 +58,6 @@ button:hover {
   height: 50px;
 }
 
-#search-button {
-  transition: transform 0.6s cubic-bezier(0.9, 0, 0.3, 0.9);
-}
-
 #music-image {
   display: flex;
   justify-content: center;
@@ -116,6 +112,10 @@ button:hover {
   height: 60px;
 }
 
-.fa-pause {
+.fa-2xl {
   transform: scale(1.4);
+}
+
+.fa-play {
+  margin-left: 5px;
 }/*# sourceMappingURL=style.css.map */
