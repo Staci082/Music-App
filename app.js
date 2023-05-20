@@ -1,5 +1,25 @@
+// MUSIC API
+
+// const url = 'https://deezerdevs-deezer.p.rapidapi.com/infos';
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '9d59965122msh0180ded4becf47bp1d5351jsn3e5337020745',
+// 		'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
+// 	}
+// };
+// 
+// try {
+// 	const response = await fetch(url, options);
+// 	const result = await response.text();
+// 	console.log(result);
+// } catch (error) {
+// 	console.error(error);
+// }
 
 
+
+// MAIN CLASS
 
 class Spotify {
     constructor() {
@@ -37,7 +57,6 @@ class Spotify {
 
 // ADD SONG TO PLAYLIST FUNCTION
     addSongToPlaylist(songTitle) {
-      
       let song = this.songs.find(song=>song.title === songTitle)
       this.playlist.push(song)
     }
@@ -46,9 +65,8 @@ class Spotify {
     openSearchBar() {
       // using a parameter here to connect the variable "searchBar" to the eventListener
       const closeSearchIcon = `<i class="fa-solid fa-xmark fa-lg"></i>`;
-       //   const searchBar = document.querySelector("#search-bar");
       console.log("open search")
-      
+
       searchButton.innerHTML = closeSearchIcon;    
       this.searchToggle = true;
     }
@@ -56,7 +74,6 @@ class Spotify {
 // CLOSE SEARCH BAR FUNCTION
     closeSearchBar() { 
       const openSearchIcon = `<i class="fa-solid fa-magnifying-glass fa-lg"></i>`;
-   //   const searchBar = document.querySelector("#search-bar");
       console.log("close search")
 
       searchButton.innerHTML = openSearchIcon;  
@@ -129,7 +146,10 @@ class Spotify {
 let app = new Spotify();
 
 
+
+
 // ADD FUNCTIONS TO BUTTONS ON CLICKITY CLACK
+
 
 // PLAY & PAUSE BUTTON EVENTLISTENER
 playPauseButton.addEventListener('click', () => {
@@ -144,9 +164,17 @@ playlistButton.addEventListener('click', () => {
 
 // SEARCH BAR & BUTTON EVENTLISTENER
 const searchButton = document.getElementById('search-button');
-
 searchButton.addEventListener('click', () => {
   app.searchToggle ? app.closeSearchBar() : app.openSearchBar();
+});
+
+// MAKING SEARCH POSSIBLE WITH ENTER KEY AS WELL
+const searchBar = document.querySelector("#search-bar");
+searchBar.addEventListener("keypress", function(e) {   // makes enter key press search button
+  if (e.key === "Enter") {
+    e.preventDefault();
+    searchButton.click();
+  }
 });
 
 // PREVIOUS SONG BUTTON EVENTLISTENER
@@ -160,6 +188,8 @@ const nextButton = document.getElementById('next-button');
 nextButton.addEventListener('click', () => {
     app.nextSong()
 });
+
+
 
 
 

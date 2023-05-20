@@ -23,6 +23,7 @@ body {
     background-image: url("../images/paint.jpg");
     background-size: cover;
 }
+
 .text {
     color: rgb(255, 255, 255);
     text-align: center;
@@ -67,31 +68,29 @@ button {
     width: $innerWidth;
     height: 50px;
 }
-.search {
+.search-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 18px;
     box-shadow: 0 4px 24px hsla(222, 68%, 12%, 0.1);
     border-radius: 4rem;
-    padding: 10px;
+    padding: 10px 0px;
     overflow: hidden;
-    background: white;
-    & input {
-        display: none;
-        border: none;
-        outline: none;
-        border-radius: 4rem;
-        padding-left: 14px;
-        font-weight: 500;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 1.5s;
-    }
 }
-.search-input:-webkit-autofill {
-        box-shadow: 0 0 0 100px white inset;
-    }
+#search-bar {
+    display: none;
+    width: 270px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 4rem;
+    padding-left: 14px;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 2s;
+}
 
 #search-button {
     display: grid;
@@ -137,7 +136,7 @@ button {
     font-size: 0.8rem;
     color: white;
 }
-#progress {
+#progress-bar {
     width: $innerWidth;
     height: 10px;
     border-radius: 5px;
