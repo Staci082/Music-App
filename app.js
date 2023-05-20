@@ -67,7 +67,9 @@ class Spotify {
       const closeSearchIcon = `<i class="fa-solid fa-xmark fa-lg"></i>`;
       console.log("open search")
 
-      searchButton.innerHTML = closeSearchIcon;    
+      searchButton.innerHTML = closeSearchIcon;
+      playlistButton.style.display = "none";
+      searchBar.classList.toggle("active");
       this.searchToggle = true;
     }
 
@@ -77,6 +79,8 @@ class Spotify {
       console.log("close search")
 
       searchButton.innerHTML = openSearchIcon;  
+      searchBar.classList.remove("active");
+      playlistButton.style.display = "block";
       this.searchToggle = false;
     }
 
@@ -163,13 +167,13 @@ playlistButton.addEventListener('click', () => {
 });
 
 // SEARCH BAR & BUTTON EVENTLISTENER
+const searchBar = document.querySelector("#search-bar");
 const searchButton = document.getElementById('search-button');
 searchButton.addEventListener('click', () => {
   app.searchToggle ? app.closeSearchBar() : app.openSearchBar();
 });
 
 // MAKING SEARCH POSSIBLE WITH ENTER KEY AS WELL
-const searchBar = document.querySelector("#search-bar");
 searchBar.addEventListener("keypress", function(e) {   // makes enter key press search button
   if (e.key === "Enter") {
     e.preventDefault();
