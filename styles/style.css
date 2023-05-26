@@ -31,9 +31,13 @@ body {
   height: 70vh;
   background: #0b162c;
   border-radius: 40px;
-  box-shadow: rgb(204, 219, 232) 0.1px 0.1px 6px -1px inset, rgba(255, 255, 255, 0.5) -0.3px -0.3px 6px 1px inset;
+  box-shadow: rgb(204, 219, 232) 0.1px 0.1px 6px -1px, rgba(255, 255, 255, 0.5) -0.3px -0.3px 6px 1px inset;
   padding: 40px 30px;
   margin-left: 30vw;
+}
+
+.first-screen {
+  z-index: 0;
 }
 
 button {
@@ -86,15 +90,25 @@ button:hover {
   background: #0b162c;
 }
 
-#search-bar.active {
+.search-container.active {
   width: 200px;
   height: 30px;
   background: white;
+}
+
+#search-bar.active {
   border: none;
   outline: none;
   border-radius: 20px;
   font-weight: 500;
   pointer-events: none;
+}
+
+.menu-open {
+  width: 270px;
+  height: 70vh;
+  background-color: red;
+  transform: translateY(100%);
 }
 
 #song-image-container {
