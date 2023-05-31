@@ -37,8 +37,7 @@ body {
     height: 70vh;
     background: $phoneColor;
     border-radius: 40px;
-    box-shadow: rgb(204, 219, 232) 0.1px 0.1px 6px -1px ,
-        rgba(255, 255, 255, 0.5) -0.3px -0.3px 6px 1px 
+    box-shadow: 2px 2px 10px rgb(25, 25, 25), -2px -2px 10px rgb(243, 241, 241);
     padding: 40px 30px;
     margin-left: 30vw;
 }
@@ -51,15 +50,11 @@ button {
     width: 40px;
     border-radius: 50%;
     -webkit-mask-box-image: url("../images/shine.png");
-    background: linear-gradient(
-        to bottom right,
-        #1d2638 0%,
-        #131e32 55%,
-        rgb(255, 255, 255, 0.5) 100%
-    );
+    background: linear-gradient(to bottom right, #1d2638 0%, #131e32);
     border: none;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: 2px 2px 10px rgb(25, 25, 25), -2px -2px 10px #131e32;
     &:hover {
         transform: scale(1.2);
     }
@@ -109,13 +104,12 @@ button {
     pointer-events: none;
 }
 
-.menu-open{
+.menu-open {
     width: 270px;
     height: 70vh;
-    background-color: red; 
+    background-color: red;
     transform: translateY(100%);
 }
-
 
 #song-image-container {
     display: flex;
@@ -126,11 +120,25 @@ button {
     & img {
         height: 200px;
         width: auto;
+        animation: rotate 0.5s infinite linear paused;
+        &:hover {
+            /* transition: transform 5s ease-in-out;
+            transform: rotate(360deg);*/
+            animation-play-state: running;
+        }
     }
-    &:hover {
-        transition: transform 5s ease-in-out;
+    & img {
+        rotate: 0deg;
+        transition: rotate 3s cubic-bezier(0.5, 1, 1, 1);
+    }
+}
+@keyframes rotate {
+    to {
         transform: rotate(360deg);
     }
+}
+#song-image-container > img:hover {
+    rotate: -720deg;
 }
 #progress-container {
     @include flex;
