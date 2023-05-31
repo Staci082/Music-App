@@ -120,10 +120,10 @@ button {
     & img {
         height: 200px;
         width: auto;
+
+        /* here starts the img spinner effect */
         animation: rotate 0.5s infinite linear paused;
         &:hover {
-            /* transition: transform 5s ease-in-out;
-            transform: rotate(360deg);*/
             animation-play-state: running;
         }
     }
@@ -137,6 +137,8 @@ button {
         transform: rotate(360deg);
     }
 }
+
+/* putting the img spinner again behind to create backwards effect */
 #song-image-container > img:hover {
     rotate: -720deg;
 }
