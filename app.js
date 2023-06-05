@@ -48,7 +48,7 @@ class Spotify {
     //  }
 
     // RANDOM BUTTON FUNCTION
-    playRandomSong() {
+    searchSong() {
         console.log("playing random song");
     }
 
@@ -65,29 +65,29 @@ class Spotify {
     }
 
     // OPEN SEARCH BAR FUNCTION
-  //  openSearchBar() {
-  //      console.log("open search");
+    //  openSearchBar() {
+    //      console.log("open search");
 
-        // using a parameter here to connect the variable "searchBar" to the eventListener
-        // const closeSearchIcon = `<button><i class="fa-solid fa-xmark fa-lg"></i></button>`;
-        // searchButton.innerHTML = closeSearchIcon;
-        // closeSearchIcon.classList.add("closeSearchBar")
-        // menuButton.style.display = "none";
-        // searchBar.classList.toggle("active");
-  //      this.searchToggle = true;
-  //  }
+    // using a parameter here to connect the variable "searchBar" to the eventListener
+    // const closeSearchIcon = `<button><i class="fa-solid fa-xmark fa-lg"></i></button>`;
+    // searchButton.innerHTML = closeSearchIcon;
+    // closeSearchIcon.classList.add("closeSearchBar")
+    // menuButton.style.display = "none";
+    // searchBar.classList.toggle("active");
+    //      this.searchToggle = true;
+    //  }
 
     // CLOSE SEARCH BAR FUNCTION
-  //  closeSearchBar() {
-  //      console.log("close search");
+    //  closeSearchBar() {
+    //      console.log("close search");
 
-        //  const openSearchIcon = `<i class="fa-solid fa-magnifying-glass fa-lg"></i>`;
-        //  searchBar.innerHTML = openSearchIcon;
-        //  searchBar.classList.remove("active");
-        //  menuButton.style.display = "block";
+    //  const openSearchIcon = `<i class="fa-solid fa-magnifying-glass fa-lg"></i>`;
+    //  searchBar.innerHTML = openSearchIcon;
+    //  searchBar.classList.remove("active");
+    //  menuButton.style.display = "block";
 
-  //      this.searchToggle = false;
-  //  }
+    //      this.searchToggle = false;
+    //  }
 
     // PAUSE BUTTON FUNCTION
     pause() {
@@ -156,9 +156,9 @@ let app = new Spotify();
 
 // ADD FUNCTIONS TO BUTTONS ON CLICKITY CLACK
 
-const randomButton = document.getElementById("random-button");
-randomButton.addEventListener("click", () => {
-    app.playRandomSong();
+const searchButton = document.getElementById("search-button");
+searchButton.addEventListener("click", () => {
+    app.searchSong();
 });
 
 // PLAY & PAUSE BUTTON EVENTLISTENER

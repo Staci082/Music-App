@@ -76,33 +76,7 @@ button {
     overflow: hidden;
 }
 
-#search-button {
-    display: grid;
-    place-items: center;
-    & .fa-magnifying-glass {
-        position: absolute;
-    }
-    & .fa-xmark {
-        position: absolute;
-    }
-}
-#search-bar {
-    width: 0px;
-    background: $phoneColor;
-}
 
-.search-container.active {
-    width: 200px;
-    height: 30px;
-    background: white;
-}
-#search-bar.active {
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    font-weight: 500;
-    pointer-events: none;
-}
 
 .menu-open {
     width: 270px;

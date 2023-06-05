@@ -75,36 +75,6 @@ button:hover {
   overflow: hidden;
 }
 
-#search-button {
-  display: grid;
-  place-items: center;
-}
-#search-button .fa-magnifying-glass {
-  position: absolute;
-}
-#search-button .fa-xmark {
-  position: absolute;
-}
-
-#search-bar {
-  width: 0px;
-  background: #0b162c;
-}
-
-.search-container.active {
-  width: 200px;
-  height: 30px;
-  background: white;
-}
-
-#search-bar.active {
-  border: none;
-  outline: none;
-  border-radius: 20px;
-  font-weight: 500;
-  pointer-events: none;
-}
-
 .menu-open {
   width: 270px;
   height: 70vh;
