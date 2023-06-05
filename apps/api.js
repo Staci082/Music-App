@@ -15,16 +15,12 @@ async function fetchURL(method, callBack) {
   .then(response=>response.json())
   .then(info=>{
       console.log(info)
-      getTitles(info)
-      getArtist(info)
+      getSongs(info)
 })}
 
-const getTitles = (info) => {
-  info.data.forEach(title => console.log(title.title))
-}
-
-const getArtist = (info) => { 
-  info.data.forEach(artist => console.log(artist.artist.name))
+const getSongs = (info) => {
+  info.data.forEach(response => 
+    console.log(response.title + response.artist.name))
 }
 
 const search = (searchInput) => { 
@@ -32,7 +28,7 @@ const search = (searchInput) => {
  // searchResponses.push(this.target)
 }
 
-const searchGenre = (genre) =>{
+const searchGenre = (genre) => {
   fetchURL("genre/", genre)
 }
 
@@ -41,4 +37,4 @@ const searchGenre = (genre) =>{
   search("in this moment")
 // searchGenre("rock")
 
-console.log(searchResponses)
+// console.log(searchResponses)
