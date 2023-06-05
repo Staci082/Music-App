@@ -13,19 +13,26 @@ const apiKey = "9d59965122msh0180ded4becf47bp1d5351jsn3e5337020745"
 async function fetchURL(method, callBack) {
   fetch(apiUrl + `/${method}${callBack}` + `&rapidapi-key=${apiKey}`)
   .then(response=>response.json())
-  .then(data=>{
-      console.log(data)
-      data.data.forEach(title => console.log(title.title))
+  .then(info=>{
+      console.log(info)
+      getTitles(info)
+      getArtist(info)
 })}
 
+const getTitles = (info) => {
+  info.data.forEach(title => console.log(title.title))
+}
 
+const getArtist = (info) => { 
+  info.data.forEach(artist => console.log(artist.artist.name))
+}
 
-function search(searchInput) { 
+const search = (searchInput) => { 
   fetchURL("search?q=", searchInput)
   searchResponses.push(this.target)
 }
 
-function searchGenre(genre) {
+const searchGenre = (genre) =>{
   fetchURL("genre/", genre)
 }
 
