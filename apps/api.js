@@ -1,6 +1,5 @@
 const searchInput = document.querySelector("#search-input");
 const searchBtn = document.querySelector("#search-button");
-const img = document.querySelector("#song-image-container");
 
 const songTitle = document.querySelector("#song-title");
 const songArtist = document.querySelector("#song-artist");
@@ -16,6 +15,7 @@ async function fetchURL(method, callBack) {
   .then(info=>{
       console.log(info)
       getSongs(info)
+      // getPicture(info)  WORKS!
 })}
 
 const getSongs = (info) => {
@@ -27,6 +27,13 @@ const search = (searchInput) => {
   fetchURL("search?q=", searchInput)
  // searchResponses.push(this.target)
 }
+
+
+// const getPicture = (info) => {   WORKS!
+//   info.data.forEach(response => 
+//     console.log(response.album.cover))
+// }
+
 
 const searchGenre = (genre) => {
   fetchURL("genre/", genre)
