@@ -5,7 +5,7 @@ const img = document.querySelector("#song-image-container");
 const songTitle = document.querySelector("#song-title");
 const songArtist = document.querySelector("#song-artist");
 
-let searchResponses = [];
+// let searchResponses = [];
 
 const apiUrl = "https://api.deezer.com";
 const apiKey = "9d59965122msh0180ded4becf47bp1d5351jsn3e5337020745"
@@ -29,7 +29,7 @@ const getArtist = (info) => {
 
 const search = (searchInput) => { 
   fetchURL("search?q=", searchInput)
-  searchResponses.push(this.target)
+ // searchResponses.push(this.target)
 }
 
 const searchGenre = (genre) =>{
