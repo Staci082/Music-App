@@ -1,5 +1,6 @@
 const searchInput = document.querySelector("#search-input");
 const searchBtn = document.querySelector("#search-button");
+const searchResponses = document.querySelector("#search-options");
 
 const songTitle = document.querySelector("#song-title");
 const songArtist = document.querySelector("#song-artist");
@@ -14,19 +15,35 @@ async function fetchURL(method, callBack) {
   .then(response=>response.json())
   .then(info=>{
       console.log(info)
-      getSongs(info)
+      searchSongs(info)
       // getPicture(info)  WORKS!
 })}
 
-const getSongs = (info) => {
+const searchSongs = (info) => {
   info.data.forEach(response => 
-    console.log(response.title + response.artist.name))
+    //console.log(response.title + response.artist.name)
+    searchResponses.innerHTML += `<option value="${response.title}"></option>` 
+    )
 }
 
 const search = (searchInput) => { 
   fetchURL("search?q=", searchInput)
  // searchResponses.push(this.target)
 }
+
+searchBtn.addEventListener("click", () => {
+  search(searchInput.value);   // passes city name through api function
+  searchSongs(info)
+})
+
+
+
+searchInput.addEventListener("keypress", function(e) {   // makes enter key press search button
+if (e.key === "Enter") {
+  e.preventDefault();
+  searchBtn.click();
+}
+});
 
 
 // const getPicture = (info) => {   WORKS!
@@ -41,7 +58,7 @@ const searchGenre = (genre) => {
 
 
 
-  search("in this moment")
+ // search("in this moment")
 // searchGenre("rock")
 
 // console.log(searchResponses)
