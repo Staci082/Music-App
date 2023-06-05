@@ -36,12 +36,11 @@ searchBtn.addEventListener("click", () => {
   searchSongs(info)
 })
 
-
-
 searchInput.addEventListener("keypress", function(e) {   // makes enter key press search button
 if (e.key === "Enter") {
   e.preventDefault();
   searchBtn.click();
+  searchSongs(info)
 }
 });
 
